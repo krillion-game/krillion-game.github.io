@@ -1,0 +1,24 @@
+{
+  "name": "Krillion Field Guide",
+  "short_name": "Krillion Guide",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#e8f4f7",
+  "theme_color": "#11293e",
+  "icons": [
+    {
+      "src": "/assets/images/krillion-field-guide-icon-192.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/images/krillion-field-guide-icon-512.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any"
+    }
+  ]
+}

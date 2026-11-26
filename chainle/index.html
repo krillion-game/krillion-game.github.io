@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chainle – Play the Daily Word Association Game</title>
+    <meta name="description" content="Play Chainle in your browser and practise finding one word that connects several clues. See bridge-word examples and how to test a link before submitting."><meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#11293e">
+    <link rel="canonical" href="https://krillion-game.github.io/chainle/"><link rel="icon" type="image/webp" sizes="64x64" href="/assets/images/krillion-field-guide-icon-64.webp">
+    <link rel="apple-touch-icon" href="/assets/images/krillion-field-guide-icon-192.webp"><link rel="manifest" href="/site.webmanifest">
+    <meta property="og:type" content="website"><meta property="og:site_name" content="Krillion Field Guide">
+    <meta property="og:title" content="Chainle – Play the Daily Word Association Game"><meta property="og:description" content="Play Chainle in your browser and practise finding one word that connects several clues. See bridge-word examples and how to test a link before submitting."><meta property="og:url" content="https://krillion-game.github.io/chainle/"><meta property="og:image" content="https://krillion-game.github.io/assets/images/chainle-official-art.webp"><meta property="og:image:type" content="image/webp"><meta property="og:image:alt" content="Chainle’s official icon showing two interlocking steel chain links"><meta property="og:image:width" content="768"><meta property="og:image:height" content="432">
+    <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Chainle – Play the Daily Word Association Game"><meta name="twitter:description" content="Play Chainle in your browser and practise finding one word that connects several clues. See bridge-word examples and how to test a link before submitting."><meta name="twitter:image" content="https://krillion-game.github.io/assets/images/chainle-official-art.webp"><meta name="twitter:image:alt" content="Chainle’s official icon showing two interlocking steel chain links">
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://krillion-game.github.io/#site","name":"Krillion Field Guide","url":"https://krillion-game.github.io/","inLanguage":"en"},{"@type":"WebPage","@id":"https://krillion-game.github.io/chainle/#page","name":"Chainle – Play the Daily Word Association Game","description":"Play Chainle in your browser and practise finding one word that connects several clues. See bridge-word examples and how to test a link before submitting.","url":"https://krillion-game.github.io/chainle/","inLanguage":"en","isPartOf":{"@id":"https://krillion-game.github.io/#site"},"primaryImageOfPage":{"@type":"ImageObject","contentUrl":"https://krillion-game.github.io/assets/images/chainle-official-art.webp"},"about":{"@type":"VideoGame","name":"Chainle","gamePlatform":"Web browser"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://krillion-game.github.io/"},{"@type":"ListItem","position":2,"name":"Game collection","item":"https://krillion-game.github.io/similar-games/"},{"@type":"ListItem","position":3,"name":"Chainle","item":"https://krillion-game.github.io/chainle/"}]}]}</script><style>:root {
+  --ink:#132539; --quiet:#435e72; --faint:#5a6d80; --canvas:#e8f4f7;
+  --white:#fff; --border:#d3e4eb; --nav:#11293e; --nav-text:#dceef4;
+  --nav-active:#234961; --lime:#e5ff83; --aqua:#b7f1ec; --coral:#ffd3b8;
+  --violet:#dfd8ff; --sand:#ffecaf; --blue:#c9e5ff; --rose:#f9dbe9;
+  --radius:22px; --shadow:0 14px 38px #183b5310; --mono:ui-monospace, SFMono-Regular, Consolas, monospace;
+  color-scheme:light;
+}
+*, *::before, *::after {box-sizing:border-box}
+html {scroll-behavior:smooth; scroll-padding:1.2rem}
+body {margin:0; min-width:300px; color:var(--ink); background:radial-gradient(ellipse at 100% 0%,#d1f5f6 0,transparent 38%), radial-gradient(ellipse at 0 26%,#e9eeff 0,transparent 34%), var(--canvas); font:400 1rem/1.62 system-ui, -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a {color:#15536c; text-underline-offset:.19em; text-decoration-thickness:.07em}
+a:hover {color:#0a3047}
+button,input,select {font:inherit}
+button {cursor:pointer}
+:focus-visible {outline:3px solid #b348f0; outline-offset:4px}
+img {display:block; max-width:100%; height:auto}
+[hidden] {display:none!important}
+::selection {background:#dcfc7c; color:#132539}
+h1,h2,h3,p,figure {margin:0}
+h1,h2,h3 {line-height:1.08; text-wrap:balance}
+h1 {font-size:clamp(2.55rem,5.4vw,4.7rem); letter-spacing:-.062em; font-weight:850}
+h2 {font-size:clamp(1.52rem,3vw,2.25rem); font-weight:800; letter-spacing:-.041em}
+h3 {font-size:1.17rem; font-weight:780; letter-spacing:-.021em}
+.emoji {display:inline-block; font-size:1.45em; line-height:1; vertical-align:-.12em; font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif; font-weight:400; letter-spacing:0}
+.skip-to {position:fixed; z-index:9; top:12px; left:12px; transform:translateY(-160%); padding:.7rem 1rem; background:var(--lime); border-radius:10px}
+.skip-to:focus {transform:none}
+.site-grid {width:min(1352px,calc(100% - 112px)); margin:40px auto 28px; display:grid; grid-template-columns:248px minmax(0,1fr); gap:32px; align-items:start}
+.main-column {min-width:0}
+.side {position:sticky; top:28px; border-radius:26px; color:var(--nav-text); background:linear-gradient(165deg,#172f45,#102338); padding:22px 15px 15px; box-shadow:0 22px 44px #1830442b; max-height:calc(100dvh - 56px); overflow:auto; scrollbar-width:thin; scrollbar-color:#496579 #162c40}
+.brand {display:block; padding:4px 11px 16px; color:white; text-decoration:none; line-height:1.24}
+.brand:hover {color:var(--lime)}
+.brand-name {display:block; font-size:1.8rem; font-weight:860; letter-spacing:-.067em}
+.brand small {display:block; color:#b3ccdc; font-size:.84rem; margin-top:.24rem; letter-spacing:.035em}
+.side-nav {display:grid; gap:2px; border-top:1px solid #ffffff1e; padding-top:11px}
+.side-label {padding:.7rem .73rem .3rem; color:#a9c6d9; font:680 .73rem/1.2 var(--mono); text-transform:uppercase; letter-spacing:.13em}
+.side-nav a,.side-nav summary, .mobile-nav summary {font-weight:650; color:var(--nav-text); text-decoration:none; display:flex; align-items:center; gap:10px; padding:8px 10px; min-height:43px; border-radius:11px; line-height:1.22; font-size:.94rem}
+.side-nav a:hover,.side-nav summary:hover {background:#ffffff11; color:#fff}
+.side-nav a[aria-current="page"] {color:#f4ffd3; background:var(--nav-active); box-shadow:inset 3px 0 0 var(--lime); font-weight:780}
+.side-nav a .emoji,.side-nav summary .emoji {width:1.44rem; flex:none; font-size:1.25rem; text-align:center}
+summary {cursor:pointer; list-style:none}
+summary::-webkit-details-marker {display:none}
+.side-nav summary::after,.mobile-nav summary::after {content:'+'; color:#b2d1df; margin-left:auto; font:700 1.15rem/1 var(--mono)}
+.side-nav details[open]>summary::after,.mobile-nav[open]>summary::after {content:'−'}
+.side-nav .subnav {display:grid; gap:2px; padding:2px 0 6px 12px; margin:0 0 0 9px; border-left:1px solid #ffffff25}
+.side-foot {margin:14px 5px 0; padding:13px 8px 3px; border-top:1px solid #ffffff20; display:flex; justify-content:space-between; gap:.5rem; color:#c4d8e6; font-size:.81rem}
+.side-foot a {color:inherit}
+.mobile-nav {display:none}
+.topline {min-height:38px; padding:0 1px 8px; border-bottom:1px solid #c8dde5; display:flex; align-items:center; justify-content:space-between; gap:.65rem; color:var(--quiet); font-size:.86rem}
+.breadcrumbs {display:flex; gap:.57rem; align-items:center; flex-wrap:wrap; margin:0; padding:0; list-style:none}
+.breadcrumbs li+li::before {content:'/'; color:#698196; margin-right:.55rem}
+.breadcrumbs a {text-decoration:none; color:inherit}
+.breadcrumbs a:hover {text-decoration:underline}
+.toplink {display:flex; gap:.5rem; align-items:center; white-space:nowrap; font-weight:700; color:var(--ink); text-decoration:none}
+.toplink:hover {text-decoration:underline}
+.toplink .emoji {font-size:1.3rem}
+.hero-intro {padding:26px 0 25px; display:grid; gap:11px}
+.hero-intro h1 {white-space:normal}
+.lede {max-width:68ch; color:#345366; font-size:clamp(1.02rem,1.6vw,1.17rem); line-height:1.55}
+.lede strong {color:var(--ink)}
+.player {position:relative; isolation:isolate; border-radius:24px; overflow:hidden; background:#112d49; color:#fff; min-width:0; box-shadow:0 17px 38px #1d42692c}
+.stage {width:100%; aspect-ratio:16/9; min-height:330px; max-height:640px; position:relative; isolation:isolate}
+.game-label {font:750 .79rem/1.3 var(--mono); text-transform:uppercase; letter-spacing:.16em; color:#a8e7ef; display:flex; align-items:center; gap:9px; margin-bottom:.85rem}
+.game-label::before {width:.53rem; height:.53rem; border-radius:50%; background:#a9f4b3; box-shadow:0 0 15px #a9f4b373; content:''}
+.pill-button {border:0; border-radius:12px; display:inline-flex; align-items:center; justify-content:center; gap:.55rem; min-height:47px; padding:.65rem 1.05rem; text-decoration:none; font-weight:800; line-height:1.2; color:#162d3b; background:var(--lime); box-shadow:0 3px 0 #10273545; transition:background .18s,transform .18s}
+.pill-button:hover {background:#f2ffb7; color:#101c2b; transform:translateY(-2px)}
+.pill-button:active {transform:translateY(1px)}
+.playerbar {background:#10243b; border-top:1px solid #8bcdd92d; display:flex; justify-content:space-between; align-items:center; gap:.65rem; padding:.65rem .9rem .65rem 1rem; color:#dceff9; min-height:57px; font-size:.87rem}
+.playerbar b {color:#fff}
+.playerbar button {background:#ffffff10; color:#eefaff; border:1px solid #ffffff25; border-radius:8px; padding:.4rem .65rem; min-height:38px; line-height:1.2; white-space:nowrap}
+.playerbar button:hover {background:#ffffff29}
+.playerbar .emoji {font-size:1.16rem}
+.has-popup {overflow:hidden; overscroll-behavior:none}
+.embed-stage {display:grid; background:radial-gradient(circle at 70% 35%,#31546d,#102a40)}
+.embed-poster {display:grid; grid-template-columns:minmax(0,1fr) minmax(0,.78fr); align-items:center; gap:1.2rem; padding:clamp(21px,5.5vw,62px)}
+.embed-poster img {aspect-ratio:16/10; width:100%; object-fit:cover; border:1px solid #d5eeef52; border-radius:16px}
+.embed-poster .poster-copy {display:grid; justify-items:start; gap:1rem}
+.embed-poster h2 {font-size:clamp(1.75rem,4vw,3.6rem)}
+.embed-poster p {color:#d4ecf7}
+.game-frame {display:block; border:0; width:100%; height:100%; position:absolute; inset:0; background:#fff}
+.page-section {margin:26px 0}
+.section-title {display:flex; align-items:end; justify-content:space-between; gap:.6rem; margin:0 0 13px}
+.section-title h2 .emoji {font-size:1.31em; margin-right:.22em}
+.section-title>a {font-weight:700; white-space:nowrap; font-size:.92rem}
+.fill-grid {display:grid; grid-template-columns:repeat(var(--cols,2),minmax(0,1fr)); gap:12px}
+.fill-three {--cols:3}
+.fill-four {--cols:4}
+.fill-grid > * {min-width:0}
+.tile {display:block; padding:1rem; border-radius:15px; border:1px solid #203a4919; background:var(--tone,#fff); box-shadow:0 4px 17px #2e598811; color:var(--ink); text-decoration:none; position:relative; min-width:0}
+a.tile {transition:transform .17s,box-shadow .17s}
+a.tile:hover {color:var(--ink); transform:translateY(-3px); box-shadow:0 9px 20px #163a6726}
+.tile .emoji {font-size:1.5rem; display:inline-block; margin:0 .4rem 0 0}
+.tile h3 {margin:0 0 .37rem; font-size:1.07rem}
+.tile p {font-size:.91rem; color:#304e61; line-height:1.48}
+.tone-aqua {--tone:var(--aqua)}
+.tone-violet {--tone:var(--violet)}
+.tone-coral {--tone:var(--coral)}
+.tone-lime {--tone:var(--lime)}
+.tone-sand {--tone:var(--sand)}
+.tone-blue {--tone:var(--blue)}
+.tone-rose {--tone:var(--rose)}
+.game-card {padding:0; overflow:hidden}
+.game-card img {width:100%; aspect-ratio:16/9; object-fit:cover; background:#142e42; border-bottom:1px solid #15334520}
+.game-card span.tag {display:block; font-size:.79rem; font-weight:740; color:#2c485d}
+.game-card .game-info {display:grid; gap:.3rem; padding:.8rem .9rem .9rem}
+.game-card h3 {margin:0}
+.game-card p {font-size:.88rem}
+.screenshot {margin:0; background:#f4fbfc; overflow:hidden; border-radius:15px; border:1px solid #19394b1c}
+.screenshot img {width:100%; aspect-ratio:16/9; object-fit:cover; background:#142b43}
+.screenshot img.is-pixel {object-fit:contain; image-rendering:pixelated; padding:15px; background:radial-gradient(ellipse at center,#265573,#12293e)}
+.screenshot figcaption {color:#3e5867; font-size:.82rem; line-height:1.42; display:block; padding:.63rem .73rem}
+.readout-grid {display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:12px}
+.readout-grid>* {min-width:0}
+.panel {border:1px solid #14344316; border-radius:var(--radius); padding:clamp(16px,2.8vw,28px); background:var(--tone,#fff); box-shadow:var(--shadow); min-width:0}
+.panel h2 .emoji {font-size:1.26em; margin-right:.18em}
+.panel h2 {margin-bottom:.78rem}
+.panel p {max-width:72ch; margin:.6rem 0 0}
+.panel p:first-of-type {margin-top:0}
+.panel p>a,.panel li>a {font-weight:650}
+.panel ol,.panel ul {padding-left:1.25em; margin:.55rem 0 0}
+.panel li+li {margin-top:.42rem}
+.panel li::marker {color:#176076}
+.tiny-note {font-size:.84rem; color:#486070}
+.figure-strip {display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px}
+.figure-strip>.screenshot:only-child {grid-column:1/-1}
+.content-mosaic {display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:13px; margin:0 0 22px; align-items:stretch}
+.content-mosaic > section {grid-column:span var(--span,12)}
+.content-mosaic .screenshot {height:max-content; align-self:start}
+.panel.prose-callout {border-left:5px solid #2a8290}
+.panel.prose-callout h2 {font-size:1.48rem}
+.panel.prose-timeline {background:linear-gradient(120deg,var(--tone,#fff),#fff)}
+.timeline-list {list-style:none; padding:0!important; margin:.9rem 0 0!important; display:grid; gap:.48rem}
+.timeline-list li {margin:0!important; padding:.63rem .7rem .63rem 1rem; position:relative; border-left:3px solid #2c8ea3; background:#ffffffa0; border-radius:0 9px 9px 0}
+.timeline-list b {display:block; margin-bottom:.12rem}
+.scroll-x {overflow:auto; max-width:100%; scrollbar-color:#7797aa #e8f2f4; scrollbar-width:thin}
+table {border-collapse:separate; border-spacing:0; width:100%; font-size:.94rem; line-height:1.42; text-align:left; background:#ffffffa1; border-radius:10px; overflow:hidden}
+caption {caption-side:top; text-align:left; padding:.16rem 0 .55rem; color:#456072; font-size:.84rem}
+th,td {padding:.54rem .66rem; vertical-align:top; border-bottom:1px solid #203a491c}
+thead th {background:#dcebf1; font-size:.84rem; color:#1a4659}
+tbody tr:last-child>* {border-bottom:0}
+tbody tr:nth-child(even) {background:#edf5f7ad}
+.bars {display:grid; gap:.58rem; margin:.85rem 0 .4rem}
+.bar-row {display:grid; grid-template-columns:minmax(104px,1.12fr) minmax(64px,1.8fr) minmax(40px,.5fr); align-items:center; gap:.43rem; font-size:.86rem; line-height:1.18}
+.bar-track {background:#dae8ed; border-radius:50px; overflow:hidden; height:10px}
+.bar-fill {height:100%; width:var(--bar); background:var(--bar-color,#167f96); display:block; border-radius:50px}
+.bar-row strong {text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap}
+.content-mosaic blockquote {margin:.55rem 0 0; padding:1rem; border-radius:12px; background:#ffffff91; line-height:1.55; font-weight:650}
+.reveal-list {display:grid;gap:.52rem;margin-top:.62rem}
+.reveal-list details {background:#ffffffb5; border:1px solid #203d4d22; border-radius:11px; padding:.62rem .75rem}
+.reveal-list summary {display:flex; align-items:start; justify-content:space-between; gap:.65rem; font-weight:720; line-height:1.4}
+.reveal-list summary::after {content:'+'; color:#176778; line-height:1.36}
+.reveal-list details[open] summary::after {content:'−'}
+.reveal-list details p {padding-top:.5rem}
+.related {background:#d9edf2; border:1px solid #bedbe5; border-radius:18px; padding:16px; margin:22px 0}
+.related h2 {font-size:1.25rem; margin:0 0 .65rem}
+.related-links {display:flex; gap:.5rem; flex-wrap:wrap; margin:0; padding:0; list-style:none}
+.related-links a {color:#193b50; text-decoration:none; font-weight:690; font-size:.9rem; background:#f8fdff; border:1px solid #bfdce4; border-radius:9px; padding:.42rem .65rem; display:block}
+.related-links a:hover {background:var(--lime)}
+.site-footer {border-top:1px solid #bdd8e3; padding:17px 0 10px; display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; color:#466171; font-size:.83rem}
+.site-footer b {color:#183749}
+.footer-links {display:flex; justify-content:flex-end; flex-wrap:wrap; gap:.4rem 1rem; margin:0; padding:0; list-style:none}
+.footer-links a {color:#284c62}
+.site-index details {border:1px solid #c8e1e8;background:#fff;border-radius:12px;padding:.55rem .7rem;margin:.5rem 0}
+.site-index summary {font-weight:750}
+.site-index ul {display:flex; padding:0; margin:.6rem 0 0; list-style:none; gap:.4rem .8rem; flex-wrap:wrap}
+.index-search {padding:.54rem .69rem;border-radius:10px;border:1px solid #aecad5;width:min(100%,460px); color:var(--ink);background:#fafdff}
+.search-status {font-size:.9rem; margin-top:.5rem; color:var(--quiet)}
+.calculator {display:grid; grid-template-columns:1fr 1fr; gap:.7rem; align-items:end; margin-top:.72rem}
+.calculator label {display:grid; gap:.25rem; font-weight:700}
+.calculator input {width:100%; min-width:0; background:#fff; border:1px solid #98b6c7; border-radius:8px; padding:.4rem .6rem; color:var(--ink)}
+.calculator output {background:#d0f7e8; padding:.43rem .65rem; border-radius:8px; font-weight:780}
+.game-cards .game-card img {aspect-ratio:16/9}
+@media(max-width:1140px) {
+  .site-grid {grid-template-columns:221px minmax(0,1fr); width:calc(100% - 80px); gap:23px}
+  .side {padding-inline:12px}
+  .fill-four {--cols:2}
+}
+@media(max-width:860px) {
+  .site-grid {grid-template-columns:minmax(0,1fr); width:min(720px,calc(100% - 42px)); margin:19px auto; gap:12px}
+  .side {position:relative; top:0; max-height:none; padding:8px 12px; display:grid; grid-template-columns:minmax(0,1fr) auto; gap:.5rem; align-items:start; border-radius:16px; overflow:visible}
+  .brand {padding:6px 5px 7px}
+  .brand-name {font-size:1.45rem}
+  .brand small {font-size:.77rem}
+  .desktop-navigation,.side-foot {display:none}
+  .mobile-nav {display:block; align-self:center}
+  .mobile-nav[open]{align-self:start}
+  .mobile-nav summary {padding:9px; min-width:96px}
+  .mobile-nav .side-nav {grid-column:1/-1; position:absolute; inset:calc(100% + 5px) 0 auto; background:#142c44; border-radius:13px; padding:10px; z-index:9; box-shadow:var(--shadow); max-height:75dvh; overflow:auto}
+  .hero-intro {padding:18px 0 21px}
+  .stage {max-height:520px}
+  .content-mosaic {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .content-mosaic>section {grid-column:span 2}
+  .content-mosaic>section.narrow-on-tablet {grid-column:span 1}
+}
+@media(max-width:560px) {
+  .site-grid {width:calc(100% - 28px); margin:12px auto}
+  .topline {font-size:.78rem}
+  .toplink .emoji {font-size:1.12rem}
+  .game-label {margin-bottom:.52rem}
+  .embed-stage {min-height:490px}
+  .embed-poster {grid-template-columns:1fr; align-content:center}
+  .embed-poster img {grid-row:1; max-height:190px}
+  .playerbar {padding:.5rem .6rem; font-size:.78rem}
+  .playerbar button {font-size:.78rem; white-space:normal}
+  .section-title {align-items:start}
+  .section-title>a {font-size:.8rem; white-space:normal; text-align:right}
+  .fill-three,.fill-four {--cols:1}
+  .game-cards.single-row {grid-template-columns:repeat(3,minmax(132px,1fr)); overflow-x:auto; padding-bottom:7px; scroll-snap-type:x proximity}
+  .game-cards.single-row .game-card {scroll-snap-align:start}
+  .game-cards.single-row .game-info {padding:.58rem}
+  .game-cards.single-row .game-info p {font-size:.79rem}
+  .readout-grid,.figure-strip,.content-mosaic {grid-template-columns:minmax(0,1fr)}
+  .content-mosaic>section,.content-mosaic>section.narrow-on-tablet {grid-column:1/-1}
+  .site-footer {flex-direction:column}
+  .footer-links {justify-content:flex-start}
+  .bar-row {grid-template-columns:minmax(78px,1fr) minmax(65px,1.2fr) minmax(30px,.44fr);font-size:.8rem}
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {scroll-behavior:auto!important; animation-duration:.01ms!important; transition-duration:.01ms!important}
+}
+.content-mosaic .figure-strip .screenshot img {max-height:260px}
+.content-mosaic .figure-strip .screenshot:only-child img {max-height:285px}
+.reload-game {margin-left:auto}
+.reload-game+button {margin-left:0}
+.game-main-player .game-frame {background:#10283c; transform-origin:top left}
+.game-main-player .embed-stage.local-game-loaded {overflow:hidden}
+@media(max-width:560px) {
+  .game-main-player .embed-stage.local-game-loaded {min-height:min(540px,83vh)}
+}
+.player.is-fullscreen {width:100%; height:100%; max-width:none; max-height:none; margin:0; padding:0; border:0; border-radius:0; background:#0b263a}
+.player.expanded {position:fixed; z-index:20; inset:0; height:100dvh}
+.player.is-fullscreen .embed-stage {position:absolute; inset:0; width:100%; height:100%; max-width:none; min-height:0; max-height:none; aspect-ratio:auto; overflow:hidden}
+.player.is-fullscreen .playerbar {
+  position:absolute; z-index:1; right:calc(12px + env(safe-area-inset-right, 0px)); bottom:calc(12px + env(safe-area-inset-bottom, 0px));
+  min-height:0; max-width:calc(100% - 24px); padding:.35rem; gap:.4rem; border:1px solid #8bcdd94d; border-radius:11px; background:#10243bee;
+}
+.player.is-fullscreen .playerbar [data-frame-status] {display:none}
+.chainle-quote-1 blockquote{font:800 clamp(1.28rem,4vw,2.35rem)/1.2 var(--mono);letter-spacing:.06em}.content-mosaic {align-items:start}
+.content-mosaic>.panel {padding:clamp(16px,2vw,24px)}
+.content-mosaic>.panel>h2 {font-size:clamp(1.35rem,2.55vw,2rem)}
+.content-mosaic>.prose-images>h2 {font-size:clamp(1.2rem,2vw,1.6rem)}
+.content-mosaic .prose-images .figure-strip {
+  width:min(100%,36rem);
+  margin:.6rem auto .25rem;
+  align-items:start;
+}
+.content-mosaic .prose-images .figure-strip[data-figures="1"] {
+  grid-template-columns:minmax(0,1fr);
+  width:min(100%,18rem);
+}
+.content-mosaic .prose-images .figure-strip[data-figures="2"] {
+  grid-template-columns:repeat(2,minmax(0,1fr));
+}
+.content-mosaic .prose-images .figure-strip[data-figures="4"] {
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  width:min(100%,48rem);
+}
+.content-mosaic .prose-images .screenshot {
+  min-width:0;
+  height:auto;
+}
+.content-mosaic .prose-images .figure-strip .screenshot img {
+  aspect-ratio:16/10;
+  max-height:none;
+}
+.content-mosaic .prose-images .screenshot img.is-pixel {padding:clamp(8px,1.5vw,19px)}
+.content-mosaic .prose-images .screenshot figcaption {padding:.5rem .6rem; overflow-wrap:anywhere}
+.content-mosaic .bars .bar-row {grid-template-columns:minmax(0,1.15fr) minmax(2.8rem,1.65fr) max-content}
+.content-mosaic .bar-row>span:first-child {overflow-wrap:anywhere}
+.content-mosaic .prose-collection .game-cards {grid-template-columns:repeat(4,minmax(0,1fr))}
+.player .embed-poster img {width:min(100%,22rem); justify-self:center}
+@media(max-width:1120px) {
+  .content-mosaic {grid-template-columns:minmax(0,1fr)}
+  .content-mosaic>section {grid-column:1/-1}
+}
+@media(max-width:1060px) {
+  .content-mosaic .prose-collection .game-cards {grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:620px) {
+  .content-mosaic .prose-images .figure-strip[data-figures="4"] {grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:560px) {
+  .player .embed-poster img {width:min(100%,16rem)}
+}
+@media(max-width:420px) {
+  .content-mosaic .prose-images .figure-strip[data-figures="2"] {grid-template-columns:minmax(0,1fr)}
+  .content-mosaic .prose-images [data-figures="2"] .screenshot {
+    display:grid;
+    grid-template-columns:clamp(4.25rem,34%,6.5rem) minmax(0,1fr);
+    align-items:center;
+  }
+}
+@media(max-width:390px) {
+  .content-mosaic .prose-collection .game-cards {grid-template-columns:minmax(0,1fr)}
+}
+
+.embed-poster[data-poster] {
+  --poster-end:#103954;
+  --poster-accent:#78f1e7;
+  --poster-glow:#2ad6e872;
+  --poster-wash:#e04b8c5e;
+  --poster-texture:repeating-radial-gradient(ellipse at 81% 58%,transparent 0 20px,#b9f7ff28 21px 22px,transparent 23px 34px);
+  position:relative;
+  isolation:isolate;
+  grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+  gap:clamp(1rem,3vw,3rem);
+  padding:clamp(1rem,2.8vw,2.2rem) clamp(1.1rem,3.5vw,3.4rem);
+  background:radial-gradient(ellipse at 82% 45%,var(--poster-glow),transparent 58%),
+    radial-gradient(ellipse at 80% 110%,var(--poster-wash),transparent 52%),
+    linear-gradient(118deg,#081720 8%,var(--poster-end));
+}
+.embed-poster[data-poster]::before {
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:var(--poster-texture);
+  mask-image:linear-gradient(102deg,transparent 30%,#000 72%);
+  pointer-events:none;
+}
+.embed-poster[data-poster="chainle"] {
+  --poster-end:#322555;
+  --poster-accent:#ffdb92;
+  --poster-glow:#a98af277;
+  --poster-wash:#d982415c;
+  --poster-texture:repeating-linear-gradient(133deg,transparent 0 30px,#dfd4ff20 31px 32px,transparent 33px 54px);
+  --poster-tilt:-2deg;
+  --poster-image-zoom:1.14;
+}
+.embed-poster[data-poster="travle"] {
+  --poster-end:#18453c;
+  --poster-accent:#acef9c;
+  --poster-glow:#42db9470;
+  --poster-wash:#93d9e343;
+  --poster-texture:repeating-linear-gradient(120deg,transparent 0 39px,#b5ffd429 40px 41px,transparent 42px 64px),
+    radial-gradient(circle at 93% 72%,#defca4 0 4px,transparent 5px),
+    radial-gradient(circle at 73% 24%,#a2f5cf 0 3px,transparent 4px);
+  --poster-tilt:1.5deg;
+}
+.embed-poster[data-poster="globle"] {
+  --poster-end:#432439;
+  --poster-accent:#ffd091;
+  --poster-glow:#f49e4b7a;
+  --poster-wash:#f2546978;
+  --poster-texture:repeating-radial-gradient(circle at 78% 53%,transparent 0 23px,#ffe2a83d 24px 25px,transparent 26px 40px);
+  --poster-tilt:-1.5deg;
+}
+.embed-poster[data-poster="worldle"] {
+  --poster-end:#193659;
+  --poster-accent:#9ef5d8;
+  --poster-glow:#398fdf80;
+  --poster-wash:#42cc9d62;
+  --poster-texture:repeating-linear-gradient(90deg,transparent 0 25px,#c1f5ee30 26px 27px),
+    repeating-linear-gradient(0deg,transparent 0 25px,#c1f5ee30 26px 27px);
+  --poster-tilt:1.5deg;
+}
+.embed-poster[data-poster] .poster-copy {gap:.72rem}
+.embed-poster[data-poster] .game-label {margin-bottom:0; color:var(--poster-accent)}
+.embed-poster[data-poster] .game-label::before {background:var(--poster-accent); box-shadow:0 0 12px var(--poster-glow)}
+.embed-poster[data-poster] h2 {font-size:clamp(2rem,4.45vw,3.9rem); letter-spacing:-.065em}
+.embed-poster[data-poster="krillion"] h2 {max-width:11ch}
+.embed-poster[data-poster] .poster-copy p {max-width:34ch; line-height:1.48}
+.poster-visual {
+  position:relative;
+  width:min(100%,22rem);
+  display:grid;
+  gap:.68rem;
+  justify-self:center;
+}
+[data-poster="krillion"] .poster-visual {width:min(100%,30rem)}
+.poster-artwork {
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--poster-accent);
+  border-radius:17px;
+  box-shadow:0 0 32px var(--poster-glow),0 18px 35px #02091293;
+  background:#0a1826;
+  transform:rotate(var(--poster-tilt,0deg));
+}
+.embed-poster[data-poster] img.poster-cover {
+  width:100%;
+  aspect-ratio:16/9;
+  border:0;
+  border-radius:0;
+  transform:scale(var(--poster-image-zoom,1));
+}
+.poster-artwork::after {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(112deg,transparent 26%,#f6ffff08 37%,#f6ffff47 52%,transparent 68%);
+  opacity:0;
+  pointer-events:none;
+}
+.embed-poster[data-poster] img.poster-mascot {
+  position:absolute;
+  top:-1.2rem;
+  right:-1rem;
+  width:clamp(52px,7.4vw,96px);
+  aspect-ratio:1;
+  object-fit:contain;
+  border:0;
+  border-radius:0;
+  image-rendering:pixelated;
+  filter:drop-shadow(0 5px 12px #fa4c8d92);
+  pointer-events:none;
+}
+.poster-readout {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  margin:0;
+  border:1px solid #abfff463;
+  border-radius:12px;
+  background:#0c263c;
+}
+.poster-readout div {min-width:0; padding:.48rem .28rem; text-align:center}
+.poster-readout div+div {border-left:1px solid #abfff428}
+.poster-readout dt {color:#d2edf4; font-size:.74rem; line-height:1.25}
+.poster-readout dd {margin:.18rem 0 0; color:#e5ff9f; font:750 .93rem/1.08 var(--mono); white-space:nowrap}
+.poster-readout div:nth-child(2) dd {color:#e8d8ff}
+.poster-readout div:nth-child(3) dd {color:#a5f9ee}
+
+@media(max-width:560px) {
+  .embed-poster[data-poster] {grid-template-columns:minmax(0,1fr); align-content:center; gap:.9rem; padding:1rem}
+  .embed-poster[data-poster] .poster-copy {gap:.52rem}
+  .embed-poster[data-poster] h2 {max-width:none; font-size:clamp(1.5rem,6.25vw,2rem)}
+  .embed-poster[data-poster] .poster-copy p {font-size:.93rem}
+  .embed-poster[data-poster] .poster-visual {width:min(100%,16rem); gap:.48rem}
+  .embed-poster[data-poster] .poster-artwork {transform:none; border-radius:13px}
+  .embed-poster[data-poster] img.poster-mascot {width:54px; top:-.72rem; right:-.5rem}
+  .poster-readout div {padding:.34rem .22rem}
+  .poster-readout dd {font-size:.83rem}
+}
+@media(prefers-reduced-motion:no-preference) {
+  .poster-artwork {transition:box-shadow .32s ease}
+  .embed-poster:is(:hover,:focus-within) .poster-artwork {box-shadow:0 0 46px var(--poster-glow),0 18px 35px #02091293}
+  .embed-poster:is(:hover,:focus-within) .poster-artwork::after {animation:poster-sheen .95s ease-out}
+  @keyframes poster-sheen {
+    0% {transform:translateX(-105%); opacity:0}
+    35% {opacity:.8}
+    100% {transform:translateX(105%); opacity:0}
+  }
+}
+</style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7305083056611385" crossorigin="anonymous"></script></head><body class="chainle-page"><a class="skip-to" href="#main">Skip to content</a><div class="site-grid"><aside class="side"><a class="brand" href="/"><span class="brand-name">Krillion</span><small>FIELD GUIDE</small></a><nav class="desktop-navigation" aria-label="Main navigation"><div class="side-nav"><div class="side-label">Dive station</div><a href="/"><span class="emoji" aria-hidden="true">🏠</span> <span>Home</span></a><a href="/daily-dive/"><span class="emoji" aria-hidden="true">🌊</span> <span>Daily Dive</span></a><a href="/unlimited/"><span class="emoji" aria-hidden="true">♾️</span> <span>Unlimited</span></a><a href="/puffer-party/"><span class="emoji" aria-hidden="true">🐡</span> <span>Puffer Party</span></a><a href="/archive/"><span class="emoji" aria-hidden="true">🗃️</span> <span>Archive</span></a><a href="/themed-packs/"><span class="emoji" aria-hidden="true">🗺️</span> <span>Themed Packs</span></a><div class="side-label">Explore</div><a href="/how-to-play/"><span class="emoji" aria-hidden="true">🎮</span> <span>How to Play</span></a><a href="/scoring/"><span class="emoji" aria-hidden="true">📊</span> <span>Scoring</span></a><a href="/answers/"><span class="emoji" aria-hidden="true">💬</span> <span>Answer Guide</span></a><a href="/geography/"><span class="emoji" aria-hidden="true">🌍</span> <span>Geography</span></a><a href="/sports/"><span class="emoji" aria-hidden="true">🏟️</span> <span>Sports</span></a><a href="/similar-games/"><span class="emoji" aria-hidden="true">🕹️</span> <span>Similar Games</span></a><details><summary><span class="emoji" aria-hidden="true">📖</span> <span>More field guides</span></summary><div class="subnav"><a href="/rarity-tiers/"><span class="emoji" aria-hidden="true">🪸</span> <span>Rarity Tiers</span></a><a href="/one-in-a-krillion/"><span class="emoji" aria-hidden="true">💎</span> <span>One in a Krillion</span></a><a href="/too-clever/"><span class="emoji" aria-hidden="true">🎭</span> <span>Too Clever</span></a><a href="/depth/"><span class="emoji" aria-hidden="true">📏</span> <span>Depth Chart</span></a><a href="/timer/"><span class="emoji" aria-hidden="true">⏱️</span> <span>The Timer</span></a><a href="/spelling/"><span class="emoji" aria-hidden="true">✍️</span> <span>Spelling Help</span></a><a href="/aliases/"><span class="emoji" aria-hidden="true">🏷️</span> <span>Aliases</span></a><a href="/rejected-answers/"><span class="emoji" aria-hidden="true">🛟</span> <span>Rejected Answers</span></a><a href="/results/"><span class="emoji" aria-hidden="true">🧾</span> <span>Dive Results</span></a><a href="/share-results/"><span class="emoji" aria-hidden="true">📤</span> <span>Share Results</span></a></div></details><details><summary><span class="emoji" aria-hidden="true">🧠</span> <span>Practice bench</span></summary><div class="subnav"><a href="/sample-prompts/"><span class="emoji" aria-hidden="true">🧠</span> <span>Sample Prompts</span></a><a href="/practice-plan/"><span class="emoji" aria-hidden="true">📓</span> <span>Practice Plan</span></a><a href="/risk-strategy/"><span class="emoji" aria-hidden="true">🎯</span> <span>Risk Strategy</span></a><a href="/recall-drills/"><span class="emoji" aria-hidden="true">🔦</span> <span>Recall Drills</span></a><a href="/warm-up/"><span class="emoji" aria-hidden="true">⚡</span> <span>Quick Warm-Up</span></a></div></details><details><summary><span class="emoji" aria-hidden="true">🌎</span> <span>All trivia topics</span></summary><div class="subnav"><a href="/countries/"><span class="emoji" aria-hidden="true">🚩</span> <span>Countries</span></a><a href="/rivers/"><span class="emoji" aria-hidden="true">🏞️</span> <span>Rivers</span></a><a href="/capitals/"><span class="emoji" aria-hidden="true">🏛️</span> <span>Capital Cities</span></a><a href="/olympics/"><span class="emoji" aria-hidden="true">🏅</span> <span>Olympics</span></a><a href="/sports-positions/"><span class="emoji" aria-hidden="true">🧤</span> <span>Sports Positions</span></a><a href="/words-and-language/"><span class="emoji" aria-hidden="true">📚</span> <span>Words &amp; Language</span></a><a href="/movies/"><span class="emoji" aria-hidden="true">🎬</span> <span>Movies</span></a><a href="/nature/"><span class="emoji" aria-hidden="true">🦎</span> <span>Nature</span></a><a href="/food-and-drink/"><span class="emoji" aria-hidden="true">🍋</span> <span>Food &amp; Drink</span></a><a href="/science/"><span class="emoji" aria-hidden="true">🔬</span> <span>Science</span></a></div></details><details open><summary><span class="emoji" aria-hidden="true">🗂️</span> <span>More pages</span></summary><div class="subnav"><a href="/chainle/" aria-current="page"><span class="emoji" aria-hidden="true">🔗</span> <span>Chainle</span></a><a href="/travle/"><span class="emoji" aria-hidden="true">🧭</span> <span>Travle</span></a><a href="/globle/"><span class="emoji" aria-hidden="true">🌐</span> <span>Globle</span></a><a href="/worldle/"><span class="emoji" aria-hidden="true">🗺️</span> <span>Worldle</span></a><a href="/faq/"><span class="emoji" aria-hidden="true">❔</span> <span>FAQ</span></a><a href="/privacy/"><span class="emoji" aria-hidden="true">🔒</span> <span>Privacy Policy</span></a><a href="/terms/"><span class="emoji" aria-hidden="true">📋</span> <span>Terms of Use</span></a><a href="/dmca/"><span class="emoji" aria-hidden="true">📝</span> <span>DMCA</span></a><a href="/contact/"><span class="emoji" aria-hidden="true">📮</span> <span>Contact</span></a></div></details></div></nav><details class="mobile-nav"><summary>Menu</summary><nav aria-label="Mobile navigation"><div class="side-nav"><div class="side-label">Dive station</div><a href="/"><span class="emoji" aria-hidden="true">🏠</span> <span>Home</span></a><a href="/daily-dive/"><span class="emoji" aria-hidden="true">🌊</span> <span>Daily Dive</span></a><a href="/unlimited/"><span class="emoji" aria-hidden="true">♾️</span> <span>Unlimited</span></a><a href="/puffer-party/"><span class="emoji" aria-hidden="true">🐡</span> <span>Puffer Party</span></a><a href="/archive/"><span class="emoji" aria-hidden="true">🗃️</span> <span>Archive</span></a><a href="/themed-packs/"><span class="emoji" aria-hidden="true">🗺️</span> <span>Themed Packs</span></a><div class="side-label">Explore</div><a href="/how-to-play/"><span class="emoji" aria-hidden="true">🎮</span> <span>How to Play</span></a><a href="/scoring/"><span class="emoji" aria-hidden="true">📊</span> <span>Scoring</span></a><a href="/answers/"><span class="emoji" aria-hidden="true">💬</span> <span>Answer Guide</span></a><a href="/geography/"><span class="emoji" aria-hidden="true">🌍</span> <span>Geography</span></a><a href="/sports/"><span class="emoji" aria-hidden="true">🏟️</span> <span>Sports</span></a><a href="/similar-games/"><span class="emoji" aria-hidden="true">🕹️</span> <span>Similar Games</span></a><details><summary><span class="emoji" aria-hidden="true">📖</span> <span>More field guides</span></summary><div class="subnav"><a href="/rarity-tiers/"><span class="emoji" aria-hidden="true">🪸</span> <span>Rarity Tiers</span></a><a href="/one-in-a-krillion/"><span class="emoji" aria-hidden="true">💎</span> <span>One in a Krillion</span></a><a href="/too-clever/"><span class="emoji" aria-hidden="true">🎭</span> <span>Too Clever</span></a><a href="/depth/"><span class="emoji" aria-hidden="true">📏</span> <span>Depth Chart</span></a><a href="/timer/"><span class="emoji" aria-hidden="true">⏱️</span> <span>The Timer</span></a><a href="/spelling/"><span class="emoji" aria-hidden="true">✍️</span> <span>Spelling Help</span></a><a href="/aliases/"><span class="emoji" aria-hidden="true">🏷️</span> <span>Aliases</span></a><a href="/rejected-answers/"><span class="emoji" aria-hidden="true">🛟</span> <span>Rejected Answers</span></a><a href="/results/"><span class="emoji" aria-hidden="true">🧾</span> <span>Dive Results</span></a><a href="/share-results/"><span class="emoji" aria-hidden="true">📤</span> <span>Share Results</span></a></div></details><details><summary><span class="emoji" aria-hidden="true">🧠</span> <span>Practice bench</span></summary><div class="subnav"><a href="/sample-prompts/"><span class="emoji" aria-hidden="true">🧠</span> <span>Sample Prompts</span></a><a href="/practice-plan/"><span class="emoji" aria-hidden="true">📓</span> <span>Practice Plan</span></a><a href="/risk-strategy/"><span class="emoji" aria-hidden="true">🎯</span> <span>Risk Strategy</span></a><a href="/recall-drills/"><span class="emoji" aria-hidden="true">🔦</span> <span>Recall Drills</span></a><a href="/warm-up/"><span class="emoji" aria-hidden="true">⚡</span> <span>Quick Warm-Up</span></a></div></details><details><summary><span class="emoji" aria-hidden="true">🌎</span> <span>All trivia topics</span></summary><div class="subnav"><a href="/countries/"><span class="emoji" aria-hidden="true">🚩</span> <span>Countries</span></a><a href="/rivers/"><span class="emoji" aria-hidden="true">🏞️</span> <span>Rivers</span></a><a href="/capitals/"><span class="emoji" aria-hidden="true">🏛️</span> <span>Capital Cities</span></a><a href="/olympics/"><span class="emoji" aria-hidden="true">🏅</span> <span>Olympics</span></a><a href="/sports-positions/"><span class="emoji" aria-hidden="true">🧤</span> <span>Sports Positions</span></a><a href="/words-and-language/"><span class="emoji" aria-hidden="true">📚</span> <span>Words &amp; Language</span></a><a href="/movies/"><span class="emoji" aria-hidden="true">🎬</span> <span>Movies</span></a><a href="/nature/"><span class="emoji" aria-hidden="true">🦎</span> <span>Nature</span></a><a href="/food-and-drink/"><span class="emoji" aria-hidden="true">🍋</span> <span>Food &amp; Drink</span></a><a href="/science/"><span class="emoji" aria-hidden="true">🔬</span> <span>Science</span></a></div></details><details open><summary><span class="emoji" aria-hidden="true">🗂️</span> <span>More pages</span></summary><div class="subnav"><a href="/chainle/" aria-current="page"><span class="emoji" aria-hidden="true">🔗</span> <span>Chainle</span></a><a href="/travle/"><span class="emoji" aria-hidden="true">🧭</span> <span>Travle</span></a><a href="/globle/"><span class="emoji" aria-hidden="true">🌐</span> <span>Globle</span></a><a href="/worldle/"><span class="emoji" aria-hidden="true">🗺️</span> <span>Worldle</span></a><a href="/faq/"><span class="emoji" aria-hidden="true">❔</span> <span>FAQ</span></a><a href="/privacy/"><span class="emoji" aria-hidden="true">🔒</span> <span>Privacy Policy</span></a><a href="/terms/"><span class="emoji" aria-hidden="true">📋</span> <span>Terms of Use</span></a><a href="/dmca/"><span class="emoji" aria-hidden="true">📝</span> <span>DMCA</span></a><a href="/contact/"><span class="emoji" aria-hidden="true">📮</span> <span>Contact</span></a></div></details></div></nav></details><div class="side-foot"><span>Independent fan guide</span><a href="/faq/">Help</a></div></aside><div class="main-column"><div class="topline"><nav aria-label="Breadcrumb"><ol class="breadcrumbs"><li><a href="/">Home</a></li><li><a href="/similar-games/">Game collection</a></li><li aria-current="page">Chainle</li></ol></nav><a class="toplink" href="/faq/#page-index"><span class="emoji" aria-hidden="true">🔎</span> Page index</a></div><main id="main" tabindex="-1"><header class="hero-intro chainle-intro"><h1><span class="emoji" aria-hidden="true">🔗</span> Play Chainle</h1><p class="lede">Chainle asks you to find the word that ties clues together. A familiar association can get you halfway there. Say the candidate with every clue before you send it.</p></header>
+    <section class="player" id="play" aria-label="Chainle game player" data-game-player>
+    <div class="stage embed-stage" data-frame-area>
+      <div class="embed-poster" data-poster="chainle">
+        <div class="poster-copy"><div class="game-label">Word association</div><h2>Chainle</h2><p>Find the word that fits on both sides.</p>
+        <button class="pill-button" type="button" data-start-game><span aria-hidden="true">▶</span> Play Chainle</button></div>
+        <div class="poster-visual">
+          <div class="poster-artwork"><img src="/assets/images/chainle-official-art.webp" width="768" height="432" alt="Chainle’s official icon showing two interlocking steel chain links" fetchpriority="high" decoding="async" class="poster-cover"></div>
+        </div>
+      </div>
+    </div>
+    <div class="playerbar"><span data-frame-status><b>Chainle</b> <span aria-hidden="true">·</span> Loads when you press Play</span><button type="button" data-fullscreen aria-pressed="false"><span aria-hidden="true">⛶</span> <span data-fullscreen-label>Full screen</span></button></div>
+    <noscript><p style="padding:1rem">Enable JavaScript to load the game player.</p></noscript>
+    <script>
+    (() => {
+      const source = "https://chainle.io/";
+      const player = document.currentScript.closest('[data-game-player]');
+      const start = player.querySelector('[data-start-game]');
+      const stage = player.querySelector('[data-frame-area]');
+      const label = player.querySelector('[data-frame-status]');
+      start.addEventListener('click', () => {
+        const frame = document.createElement('iframe');
+        frame.className = 'game-frame';
+        frame.title = "Chainle game";
+        frame.referrerPolicy = 'no-referrer';
+        frame.allow = 'fullscreen';
+        frame.allowFullscreen = true;
+        frame.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-forms');
+        frame.src = source;
+        stage.replaceChildren(frame);
+        const reload = document.createElement('button');
+        reload.type = 'button';
+        reload.className = 'reload-game';
+        reload.textContent = 'Reload';
+        reload.setAttribute('aria-label', 'Reload game');
+        reload.addEventListener('click', () => {
+          frame.src = source;
+          frame.focus();
+        });
+        label.textContent = "Chainle player";
+        label.after(reload);
+        frame.focus();
+      }, {once:true});
+    })();
+    </script>
+  </section>
+    <article class="chainle-layout content-mosaic" aria-label="Play Chainle" style="margin-top:22px"><section class="panel chainle-quote-1 prose-quote tone-violet" style="--span:12" aria-labelledby="chainle-quote-1-title"><h2 id="chainle-quote-1-title"><span class="emoji" aria-hidden="true">🔗</span> Try an original two-sided bridge</h2><p>The middle word can be “ball.” Snowball works on the left, and ball game works on the right. One side can use a compound while the other reads naturally as two words. The answer earns its place by working in both directions.</p><blockquote>SNOW · ? · GAME</blockquote></section>
+<section class="panel chainle-table-2 prose-table" style="--span:7" aria-labelledby="chainle-table-2-title"><h2 id="chainle-table-2-title"><span class="emoji" aria-hidden="true">📚</span> Find the second fit</h2><p>The daily puzzle has five rounds: three two-clue bridges, a three-clue bridge and a closest-connection round. You enter one dictionary word for each round. The score is out of 1,000 per round and 5,000 for the whole puzzle.</p><div class="scroll-x" role="region" aria-label="Clue groups, Candidate, Check both sides" tabindex="0"><table>
+  <thead><tr><th scope="col">Clue groups</th><th scope="col">Candidate</th><th scope="col">Check both sides</th></tr></thead><tbody><tr><th scope="row">BOOK · ? · HOUSE</th><td>Club</td><td>Book club. Clubhouse.</td></tr><tr><th scope="row">MOON · ? · SWITCH</th><td>Light</td><td>Moonlight. Light switch.</td></tr><tr><th scope="row">SEA · ? · BOTTLE</th><td>Water</td><td>Seawater. Water bottle.</td></tr></tbody></table></div><p>Imagine a three-clue bridge with record, music and needle. Vinyl connects to each: it describes the record’s material, the music format and the thing the needle rides on. Try a candidate on the weakest side of the bridge first. A word that only fits the loudest clue will leave the other two behind.</p><p>After you submit a bridge, look at the growth of each clue’s chain. If one side stays short, think of the sense of that clue you skipped. Apply that observation to the next puzzle, where your one guess has to make the link on its own.</p></section>
+<section class="panel chainle-images-3 prose-images tone-blue" style="--span:5" aria-labelledby="chainle-images-3-title"><h2 id="chainle-images-3-title"><span class="emoji" aria-hidden="true">🧩</span> The Chainle mark</h2><div class="figure-strip" data-figures="1"><figure class="screenshot"><img src="/assets/images/chainle-official-art.webp" width="768" height="432" alt="Chainle’s official icon showing two interlocking steel chain links" loading="lazy" decoding="async"><figcaption>Chainle’s official artwork uses a pair of interlocking links.</figcaption></figure></div></section>
+<section class="panel chainle-steps-4 prose-steps tone-aqua" style="--span:12" aria-labelledby="chainle-steps-4-title"><h2 id="chainle-steps-4-title"><span class="emoji" aria-hidden="true">🎯</span> Get unstuck on a border clue</h2><ol><li>List one word that feels physically related to the first clue, then try it with the second.</li><li>If neither fits, try a different sense of either clue. “Spring” can be a season, a piece of metal or a place water comes out of the ground.</li><li>Say the final phrases out loud. Words you only see together in an unusual context are harder to verify quickly.</li></ol><p>If you like the way a word can move between meanings, try the <a href="/words-and-language/">Krillion Lexicon guide</a> next.</p></section></article>
+    <nav class="related" aria-label="Related guides"><h2><span class="emoji" aria-hidden="true">🧭</span> Keep exploring</h2><ul class="related-links"><li><a href="/words-and-language/">Words &amp; Language</a></li><li><a href="/recall-drills/">Recall Drills</a></li><li><a href="/similar-games/">Similar Games</a></li></ul></nav>
+    <section class="page-section" aria-labelledby="chainle-more"><div class="section-title"><h2 id="chainle-more"><span class="emoji" aria-hidden="true">🕹️</span> More Similar Games</h2><a href="/similar-games/">Game collection</a></div><div class="fill-grid game-cards fill-three single-row"><a class="tile game-card tone-lime" href="/travle/"><img src="/assets/images/travle-route-preview.webp" width="768" height="432" alt="An official Travle preview with its title over a map of the world" loading="lazy" decoding="async"><div class="game-info"><span class="tag">Border routes</span><h3>Travle</h3><p>Trace a route between two countries.</p></div></a><a class="tile game-card tone-coral" href="/globle/"><img src="/assets/images/globle-official-preview.webp" width="768" height="432" alt="Official Globle artwork with the game title across a world map" loading="lazy" decoding="async"><div class="game-info"><span class="tag">Warm or cold</span><h3>Globle</h3><p>Find a country using distance feedback.</p></div></a><a class="tile game-card tone-aqua" href="/worldle/"><img src="/assets/images/worldle-official-preview.webp" width="768" height="432" alt="Worldle’s official preview art for the daily country-outline puzzle" loading="lazy" decoding="async"><div class="game-info"><span class="tag">Map silhouettes</span><h3>Worldle</h3><p>Recognize a country from its outline.</p></div></a></div></section></main><footer class="site-footer"><div><b>Krillion Field Guide</b><br>Independent guide to the daily trivia dive.
+<!--LiveInternet counter--><a href="https://www.liveinternet.ru/click"
+target="_blank"><img id="licnt9458" width="0" height="0" style="border:0"
+title="LiveInternet"
+src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+alt=""/></a><script>(function(d,s){d.getElementById("licnt9458").src=
+"https://counter.yadro.ru/hit?t45.18;r"+escape(d.referrer)+
+((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+(s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+";h"+escape(d.title.substring(0,150))+";"+Math.random()})
+(document,screen)</script><!--/LiveInternet-->
+</div><nav aria-label="Footer"><ul class="footer-links"><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms of Use</a></li><li><a href="/dmca/">DMCA</a></li><li><a href="/contact/">Contact</a></li></ul></nav></footer></div></div><script>(() => {
+  const fullscreenButtons = document.querySelectorAll('[data-fullscreen]');
+  const fullElement = () => document.fullscreenElement || document.webkitFullscreenElement;
+  const closeExpanded = () => {
+    const panel = document.querySelector('.player.expanded');
+    if (!panel) return;
+    panel.classList.remove('expanded');
+    document.body.classList.remove('has-popup');
+    panel.querySelector('[data-fullscreen]').focus();
+  };
+  const updateFullscreen = () => {
+    const nativeFullscreen = fullElement();
+    for (const button of fullscreenButtons) {
+      const panel = button.closest('.player');
+      const active = nativeFullscreen === panel || panel.classList.contains('expanded');
+      panel.classList.toggle('is-fullscreen', active);
+      button.setAttribute('aria-pressed', String(active));
+      button.querySelector('[data-fullscreen-label]').textContent = active ? 'Exit full screen' : 'Full screen';
+    }
+  };
+  for (const button of fullscreenButtons) {
+    button.addEventListener('click', async () => {
+      const panel = button.closest('.player');
+      if (panel.classList.contains('expanded')) {
+        closeExpanded();
+      } else if (fullElement()) {
+        const exit = document.exitFullscreen || document.webkitExitFullscreen;
+        if (exit) await exit.call(document);
+      } else {
+        const request = panel.requestFullscreen || panel.webkitRequestFullscreen;
+        try {
+          if (!request) throw new Error('Native full screen unavailable');
+          await request.call(panel);
+        } catch {
+          panel.classList.add('expanded');
+          document.body.classList.add('has-popup');
+        }
+      }
+      updateFullscreen();
+    });
+  }
+  document.addEventListener('fullscreenchange', updateFullscreen);
+  document.addEventListener('webkitfullscreenchange', updateFullscreen);
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      closeExpanded();
+      updateFullscreen();
+      const menu = document.querySelector('.mobile-nav[open]');
+      if (menu) { menu.open = false; menu.querySelector('summary').focus(); }
+    }
+  });
+  const score = document.querySelector('[data-depth-score]');
+  if (score) {
+    const output = document.querySelector('[data-depth-result]');
+    const update = () => {
+      const points = Math.min(700, Math.max(0, Math.trunc(Number(score.value) || 0)));
+      output.textContent = `${(points * 10).toLocaleString('en-US')} m`;
+    };
+    score.addEventListener('input', update);
+    update();
+  }
+  const filter = document.querySelector('[data-page-filter]');
+  if (filter) {
+    const items = [...document.querySelectorAll('[data-index-item]')];
+    const sections = [...document.querySelectorAll('[data-index-section]')];
+    const status = document.querySelector('[data-search-status]');
+    filter.addEventListener('input', () => {
+      const value = filter.value.trim().toLowerCase();
+      let matches = 0;
+      for (const item of items) {
+        item.hidden = !item.textContent.toLowerCase().includes(value);
+        if (!item.hidden) matches++;
+      }
+      for (const section of sections) {
+        section.hidden = !section.querySelector('[data-index-item]:not([hidden])');
+        if (value) section.open = !section.hidden;
+      }
+      status.hidden = !value;
+      status.textContent = matches === 1 ? '1 page matches.' : `${matches} pages match.`;
+    });
+  }
+})();
+</script></body></html>
